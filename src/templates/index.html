@@ -1,0 +1,151 @@
+{%extends 'base.html'%}
+{%import 'partials/img.html' as img%}
+
+
+{%block custom_meta%}
+<meta content="{{keywords|join(',')}}" name="keywords" />
+
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<meta content="{{shareText}}" name="description" />
+<title>{{pageTitle}}</title>
+<meta property="og:url" content="{{url}}" />
+<meta property="og:title" content="{{shareTitle}}"/>
+<meta property="og:description" content="{{shareText}}" name="description"/>
+<meta property="og:image" content="{{imgURL}}"/>
+<meta property="og:image:height" content="{{imgHeight}}"/>
+<meta property="og:image:width" content="{{imgWidth}}"/>
+<meta property="og:type" content="article" />
+<meta property="article:author" content="{{authorFBProfile}}" />
+<meta property="article:publisher" content="https://www.facebook.com/dallasmorningnews/" />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@{{sectionTwitter}}" />
+<meta name="twitter:creator" content="@{{authorTwitter}}" />
+
+<meta name="liveFyreID" content="{{id}}" />
+
+<script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "{{shareTitle}}",
+        "url": "{{url}}",
+        "thumbnailUrl": "{{imgURL}}",
+        "dateCreated": "{{publishDate}}",
+        "articleSection": "{{section}}",
+        "creator": ["{{authors|join('","')|safe}}"],
+        "keywords": ["{{keywords|join('","')|safe}}"]
+      }
+</script>
+
+<meta property="og:keywords" content="{{keywords|join(',')}}"/>
+
+<meta name="news_keywords" content="{{keywords|join(',')}}"/>
+{%endblock%}
+
+
+{%block custom_head%}
+<link rel="canonical" href="{{url}}" />
+{%endblock%}
+
+
+{%block ad%}
+<script type="text/javascript" src="//www.googletagservices.com/tag/js/gpt.js"></script>
+<script type="text/javascript">
+DFP_networkId = "11222444";
+var DFPSlotSizes = window.isMobile ? [[320,50]] : [[728,90],[970,30]];
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+var pbjs = pbjs || {};
+pbjs.que = pbjs.que || [];
+pbjs.que.push(function() {
+  var pageAds = { //   adUnitID: "position"
+              dfpAdPositionTop: "Top",
+              dfpAdPositionMiddle: "Top2",
+              dfpAdPositionBottom: "Top2"
+  };
+
+  for(i in pageAds){
+      var bidSlot = new Object();
+      bidSlot.code = i;
+      bidSlot.sizes = DFPSlotSizes;
+      bidSlot.bids = window.isMobile ? window.mobileBids[pageAds[i]] : window.desktopBids[pageAds[i]];
+      if(typeof bidSlot.bids != "undefined"){
+          if(typeof pbjs.addAdUnits != "undefined"){
+              pbjs.addAdUnits(bidSlot);
+          }
+          window.bidSlots[i] = bidSlot;
+      }
+  }
+});
+googletag.cmd.push(function () {
+  var DFP_sitepage = "DMN/interactives";
+  var dfpSizeMapping = googletag.sizeMapping().
+          addSize([992, 480], [[728,90],[970,30]]).
+          addSize([0, 0], [[320,50]]).
+          build();
+
+
+  var adSlot0 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionTop")
+                  .defineSizeMapping(dfpSizeMapping)
+                  .setTargeting("position", "Top")
+                  .addService(googletag.pubads());
+
+  /*
+  var adSlot1 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionMiddle")
+                  .defineSizeMapping(dfpSizeMapping)
+                  .setTargeting("position", "Top2")
+                  .addService(googletag.pubads());
+  */
+
+  /*
+  var adSlot2 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionBottom")
+                  .defineSizeMapping(dfpSizeMapping)
+                  .setTargeting("position", "Top2")
+                  .addService(googletag.pubads());
+  */
+
+  googletag.pubads().enableAsyncRendering();
+  googletag.pubads().enableSingleRequest();
+  googletag.enableServices();
+
+});
+</script>
+{%endblock%}
+
+
+{%block content%}
+
+
+<section class="content-well clearfix">
+
+	<header id="story-head">
+		<h1>Photo Assignments</h1>
+	</header>
+		<!-- end storyHead -->
+
+    <h1>Selectize.js</h1>
+  			<div class="demo">
+  				<h2>Loading from API</h2>
+
+  				<div class="control-group">
+  					<label for="select-person">Movie:</label>
+  					<select id="select-person" class="people" placeholder="Choose a person..."></select>
+  				</div>
+  			</div>
+  		</div>
+
+
+
+
+
+{%endblock%}
+
+
+
+
+{%block custom_foot%}
+	<script type="text/javascript"></script>
+{%endblock%}
