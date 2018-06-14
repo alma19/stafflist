@@ -125,20 +125,317 @@ googletag.cmd.push(function () {
 		<h1>Photo Assignments</h1>
 	</header>
 		<!-- end storyHead -->
-
-    <h1>Selectize.js</h1>
-  			<div class="demo">
-  				<h2>Loading from API</h2>
-
   				<div class="control-group">
-  					<label for="select-person">Movie:</label>
-  					<select id="select-person" class="people" placeholder="Choose a person..."></select>
+
   				</div>
   			</div>
   		</div>
 
+      <table>
+	<thead>
+	<tr data-role ="days">
+		<th></th>
+		<th>Monday</th>
+		<th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+    <th>Saturday</th>
+    <th>Sunday</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr data-role="photo-assignments">
+		<td>Photo assignments</td>
+    <td data-day="monday">
+      <div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div>
+      <div class="copy">
+        Copy through end of week.
+      </div>
+
+    </td>
+    <td data-day="tuesday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+      <div class="copy">
+        Copy through end of week.
+      </div>
+
+    </div></td>
+    <td data-day="wednesday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+      <div class="copy">
+        Copy through end of week.
+      </div>
+    </div></td>
+    <td data-day="thursday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+      <div class="copy">
+        Copy through end of week.
+      </div>
+    </div></td>
+    <td data-day="friday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+      <div class="copy">
+        Copy through end of week.
+      </div>
+    </div></td>
+    <td data-day="saturday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+      <div class="copy">
+        Copy through end of week.
+      </div>
+    </div></td>
+    <td data-day="sunday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+	</tr>
+	<tr data-role="special-magazines">
+		<td>Special magazines</td>
+    <td data-day="monday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="tuesday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="wednesday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="thursday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="friday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="saturday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="sunday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+	</tr>
+	<tr data-role="business">
+		<td>Business</td>
+    <td data-day="monday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="tuesday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="wednesday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="thursday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="friday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="saturday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="sunday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+	</tr>
+	<tr data-role="metro">
+		<td>Metro</td>
+    <td data-day="monday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="tuesday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="wednesday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="thursday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="friday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="saturday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="sunday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+	</tr>
+    <tr data-role="meeting">
+		<td>2:30 Meeting</td>
+    <td data-day="monday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+      <td data-day="tuesday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="wednesday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="thursday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="friday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="saturday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="sunday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+	</tr>
+    <tr data-role="night-picture-desk">
+		<td>Night picture desk</td>
+    <td data-day="monday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="tuesday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="wednesday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="thursday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="friday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+    <td data-day="saturday"><div class="control-group">
+      <select class="select-person people" placeholder="Staff..."></select>
+    </div></td>
+      <td data-day="sunday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+	</tr>
+    <tr data-role="guide">
+		<td>Guide</td>
+      <td data-day="monday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="tuesday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="wednesday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="thursday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="friday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="saturday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="sunday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+	</tr>
+    <tr data-role="travel">
+		<td>Travel</td>
+      <td data-day="monday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="tuesday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="wednesday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="thursday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="friday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="saturday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="sunday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+	</tr>
+    <tr data-role="picture-sales">
+		<td>Picture sales</td>
+      <td data-day="monday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="tuesday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="wednesday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="thursday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="friday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="saturday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="sunday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+	</tr>
+    <tr data-role="sunday">
+		<td>Sunday 1A</td>
+      <td data-day="monday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="tuesday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="wednesday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="thursday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="friday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="saturday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="sunday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+	</tr>
+    <tr data-role="arts-and-life">
+		<td>Arts & Life</td>
+      <td data-day="monday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="tuesday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="wednesday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="thursday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="friday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="saturday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+      <td data-day="sunday"><div class="control-group">
+        <select class="select-person people" placeholder="Staff..."></select>
+      </div></td>
+	</tr>
+	</tbody>
+</table>
 
 
+</section>
 
 
 {%endblock%}
