@@ -9,28 +9,37 @@ $(document).ready(() => {
   const selectBoxes = {
   };
 
-  //
+  window.sb = selectBoxes;
+  // sb.business.monday[0].selectize.items
+  // sb.business.tuesday[0].selectize.addItem('ldallen@dallasnews.com'
+
   $('.select-person').each((i, el) => {
     const role = $(el).closest('tr').attr('data-role');
     const day = $(el).closest('td').attr('data-day');
+
+    document.getElementsByClassName('copy')['0'].onclick = () => {
+      const copyItem = selectBoxes.photo_assignments.monday[0].selectize.items;
+      selectBoxes.photo_assignments.tuesday[0].selectize.addItem(copyItem);
+    }
 
     // writing to selectBoxes
     if (!Object.prototype.hasOwnProperty.call(selectBoxes, role)) {
       selectBoxes[role] = {};
     }
+
     selectBoxes[role][day] = $(el).selectize({
       valueField: 'email',
       labelField: 'fullName',
       searchField: 'fullName',
       options: [],
       render: {
-        item: function(item, escape) {
+        item: function (item, escape) {
           return '<div>' +
               (item.fullName ? '<p class="name">' + escape(item.fullName) + '</p>' : '') +
                 (item.email ? '<span class="email">' + escape(item.email) + '</span>' : '') +
             '</div>';
         },
-        option: function(item, escape) {
+        option: function (item, escape) {
           const label = item.fullName || item.email;
           const caption = item.fullName ? item.email : null;
           return '<div>' +
@@ -67,7 +76,7 @@ $(document).ready(() => {
             var dayValue = roleValue[dayName];
             dayValue[0].selectize.addOption(staffList);
           })
-      })
+        });
           // you can apply any modification to data before passing it to selectize
           // callback(res);
 
@@ -77,21 +86,7 @@ $(document).ready(() => {
           //callback(res.response);
       }
   });
-
-
-  document.getElementById('copy').onclick = () => {
-    copy()
-  };
-
-
-  function copy() {
-    const x = document.getElementsByClassName('name')['0'].innerHTML;
-    console.log(x);
-    console.log('copy');
-  }
-
-  console.log('test');
-});
+}); // document ready
 
 // replacing the options :
 // find from selecboxes
