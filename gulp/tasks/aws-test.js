@@ -24,20 +24,24 @@ const awsDirectory = `test/${appName}/`;
 
 
 module.exports = () => {
-  const publisher = awspublish.create(awsJson);
+  const publisher = awspublish.create(Object.assign(awsJson, {
+    params: {
+      Bucket: 'interactives.dallasnews.com.test'
+    }
+  }));
 
   return gulp.src('./dist/**/*')
-      .pipe(confirm({
-        question: deline`You're about to publish this project to AWS
+    .pipe(confirm({
+      question: deline`You're about to publish this project to AWS
                         under the directory '${awsDirectory}'.
                         Are you sure you want to do this?`,
-        input: '_key:y',
-      }))
-      .pipe(rename((filePath) => {
-        // eslint-disable-next-line no-param-reassign
-        filePath.dirname = awsDirectory + filePath.dirname.replace('.\\', '');
-      }))
-      .pipe(publisher.publish({}, { force: false }))
-      .pipe(publisher.cache())
-      .pipe(awspublish.reporter());
+      input: '_key:y',
+    }))
+    .pipe(rename((filePath) => {
+      // eslint-disable-next-line no-param-reassign
+      filePath.dirname = awsDirectory + filePath.dirname.replace('.\\', '');
+    }))
+    .pipe(publisher.publish({}, { force: false, noAcl: true }))
+    .pipe(publisher.cache())
+    .pipe(awspublish.reporter());
 };
