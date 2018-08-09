@@ -6,10 +6,8 @@ import './furniture';
 
 
 $(document).ready(() => {
-
   const selectBoxes = {
   };
-
 
   //
   $('.select-person').each((i, el) => {
@@ -27,20 +25,20 @@ $(document).ready(() => {
       options: [],
       render: {
         item: function(item, escape) {
-            return '<div>' +
-                (item.fullName ? '<p class="name">' + escape(item.fullName) + '</p>' : '') +
+          return '<div>' +
+              (item.fullName ? '<p class="name">' + escape(item.fullName) + '</p>' : '') +
                 (item.email ? '<span class="email">' + escape(item.email) + '</span>' : '') +
             '</div>';
         },
         option: function(item, escape) {
-            var label = item.fullName || item.email;
-            var caption = item.fullName ? item.email : null;
-            return '<div>' +
+          const label = item.fullName || item.email;
+          const caption = item.fullName ? item.email : null;
+          return '<div>' +
                 '<p class="label">' + escape(label) + '</p>' +
                 (caption ? '<span class="caption">' + escape(caption) + '</span>' : '') +
             '</div>';
-        }
-    },
+        },
+      },
       persist: false,
       // loadThrottle: 600,
       create: false,
@@ -50,9 +48,6 @@ $(document).ready(() => {
       //
       // }
     });
-
-
-
   });
 
 
@@ -82,6 +77,20 @@ $(document).ready(() => {
           //callback(res.response);
       }
   });
+
+
+  document.getElementById('copy').onclick = () => {
+    copy()
+  };
+
+
+  function copy() {
+    const x = document.getElementsByClassName('name')['0'].innerHTML;
+    console.log(x);
+    console.log('copy');
+  }
+
+  console.log('test');
 });
 
 // replacing the options :
