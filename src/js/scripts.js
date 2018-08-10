@@ -25,17 +25,18 @@ $(document).ready(() => {
     // console.log(el.parentElement.parentElement.querySelector('.copy'));
     if (el.parentElement.parentElement.querySelector('.copy') !== null) {
       el.parentElement.parentElement.querySelector('.copy').onclick = () => {
-        const dataRole = $('.copy').closest('tr').attr('data-role');
-        const dataDay = $('.copy').closest('td').attr('data-day');
-        console.log(`${dataRole} ${dataDay}`);
+        // const dataRole = $('.copy').closest('tr').attr('data-role');
+        // const dataDay = $('.copy').closest('td').attr('data-day');
+        // console.log(`role ${role}`);
+        // console.log(`${dataRole} ${dataDay}`);
 
         const days =  ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
-        const slicedDays = days.slice(days.indexOf(dataDay) + 1);
+        const slicedDays = days.slice(days.indexOf(day) + 1);
         console.log(slicedDays);
 
         for (let x = 0; x < slicedDays.length; x += 1) {
-          const copyItem = (selectBoxes.photo_assignments[dataDay][0].selectize.items);
-          selectBoxes.photo_assignments[slicedDays[x]][0].selectize.addItem(copyItem);
+          const copyItem = (selectBoxes[role][day][0].selectize.items);
+          selectBoxes[role][slicedDays[x]][0].selectize.addItem(copyItem);
         }
 
 
