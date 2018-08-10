@@ -13,14 +13,29 @@ $(document).ready(() => {
   // sb.business.monday[0].selectize.items
   // sb.business.tuesday[0].selectize.addItem('ldallen@dallasnews.com'
 
+  // slice the array and take everyday after that
+
   $('.select-person').each((i, el) => {
     const role = $(el).closest('tr').attr('data-role');
     const day = $(el).closest('td').attr('data-day');
 
-    document.getElementsByClassName('copy')['0'].onclick = () => {
-      const copyItem = selectBoxes.photo_assignments.monday[0].selectize.items;
-      selectBoxes.photo_assignments.tuesday[0].selectize.addItem(copyItem);
+    //queryselector
+    // console.log(el.parentElement.parentElement.querySelector('.copy'));
+    if (el.parentElement.parentElement.querySelector('.copy') !== null) {
+      el.parentElement.parentElement.querySelector('.copy').onclick = () => {
+      const dataRole = $('.copy').closest('tr').attr('data-role');
+      const dataDay = $('.copy').closest('td').attr('data-day');
+      console.log(`${dataRole} ${dataDay}`);
+
+      const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+      const slicedDays = days.slice(days.indexOf(dataDay) + 1);
+      console.log(days);
+
+      const copyItem = (selectBoxes.photo_assignments[dataDay][0].selectize.items);
+      selectBoxes.photo_assignments[slicedDays[0]][0].selectize.addItem(copyItem);
+      }
     }
+
 
     // writing to selectBoxes
     if (!Object.prototype.hasOwnProperty.call(selectBoxes, role)) {
@@ -69,14 +84,14 @@ $(document).ready(() => {
       },
 
       //looking through the key and value pairs to get to the selectize option
-      success: function(staffList) {
-        Object.keys(selectBoxes).forEach(function(roleName){
-          var roleValue = selectBoxes[roleName];
-          Object.keys(roleValue).forEach(function(dayName){
-            var dayValue = roleValue[dayName];
-            dayValue[0].selectize.addOption(staffList);
-          })
+    success: function(staffList) {
+      Object.keys(selectBoxes).forEach(function(roleName){
+        const roleValue = selectBoxes[roleName];
+        Object.keys(roleValue).forEach(function(dayName){
+          const dayValue = roleValue[dayName];
+          dayValue[0].selectize.addOption(staffList);
         });
+      });
           // you can apply any modification to data before passing it to selectize
           // callback(res);
 
