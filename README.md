@@ -1,4 +1,6 @@
-# interactive_hackday
+# Photo Assignment App
+
+Every other month, the data team gets together for a hackday. We spend the day working on some sort of project or newsroom tool. For my first hackday, I worked with one of our computational journalists to create an application for our photo assignment editor. I created the front-end of this app, which allows the editor to search through our staff list and assign shifts to photographers. 
 
 This is an interactive presentation graphic built using the [`dmninteractives` Yeoman generator](https://github.com/DallasMorningNews/generator-dmninteractives).
 
